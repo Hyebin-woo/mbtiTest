@@ -1,3 +1,26 @@
 #qna {
     display: none;
 }
+.qBox {
+    background-color: whitesmoke;
+    text-align: center;
+    border-radius: 20px;
+    font-size: 20px;
+    padding: 7px;
+    margin: 15px auto;
+    width: 80%;
+}
+.answerList {
+    background-color: whitesmoke;
+    border-radius: 20px;
+    display: block;
+    width: 80%;
+    border: none;
+    font-size: 16px;
+    padding: 7px;
+    margin: 10px auto;
+}
+.answerList:hover,
+.answerList:focus {
+    background-color: lightyellow;
+}

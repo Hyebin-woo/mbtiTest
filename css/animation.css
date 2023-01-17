@@ -31,3 +31,11 @@
         opacity: 0;
     }
 }
+.fadeIn {
+    animation: fadeIn;
+    animation-duration: 0.7s;
+}
+.fadeOut {
+    animation: fadeOut;
+    animation-duration: 0.7s;
+}

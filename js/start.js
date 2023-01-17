@@ -8,14 +8,21 @@ function addAnswer(answerText, qIdx) {
     answer.classList.add("answerList");
     a.appendChild(answer);
     answer.innerHTML = answerText;
+    answer.classList.add(".fadeIn");
 
     answer.addEventListener("click", () => {
         let children = document.querySelectorAll(".answerList");
         for (let i = 0; i < children.length; i++) {
             children[i].disabled = true;
-            children[i].style.display = "none";
+            children[i].style.WebkitAnimation = "fadeOut 0.7s";
+            children[i].style.animation = "fadeOut 0.7s";
         }
-        goNext(++qIdx);
+        setTimeout(() => {
+            for (let i = 0; i < children.length; i++) {
+                children[i].style.display = "none";
+            }
+            goNext(++qIdx);
+        }, 450);
     });
 }
 
