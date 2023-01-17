@@ -1,8 +1,25 @@
 const main = document.querySelector("#main");
 const qna = document.querySelector("#qna");
+const result = document.querySelector("#result");
 let q = document.querySelector(".qBox");
 let a = document.querySelector(".answerBox");
 const endPoint = 12;
+
+//결과 페이지
+function goResult() {
+    qna.style.WebkitAnimation = "fadeOut 1s";
+    qna.style.animation = "fadeOut 1s";
+    setTimeout(() => {
+        result.style.WebkitAnimation = "fadeIn 1s";
+        result.style.animation = "fadeIn 1s";
+        setTimeout(() => {
+            qna.style.display = "none";
+            result.style.display = "block";
+        }, 450);
+        let qIdx = 0;
+        goNext(qIdx);
+    }, 450);
+}
 
 function addAnswer(answerText, qIdx) {
     let answer = document.createElement("button");
@@ -28,6 +45,11 @@ function addAnswer(answerText, qIdx) {
 }
 
 function goNext(qIdx) {
+    if (qIdx + 1 === endPoint) {
+        goResult();
+        return;
+    }
+
     q.innerHTML = qnaList[qIdx].q;
     for (let i in qnaList[qIdx].a) {
         addAnswer(qnaList[qIdx].a[i].answer, qIdx);
@@ -37,6 +59,7 @@ function goNext(qIdx) {
     status.style.width = (100 / endPoint) * (qIdx + 1) + "%";
 }
 
+// 시작하기 버튼시 qna페이지로 넘어가기
 function begin() {
     main.style.WebkitAnimation = "fadeOut 1s";
     main.style.animation = "fadeOut 1s";
