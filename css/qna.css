@@ -24,3 +24,32 @@
 .answerList:focus {
     background-color: lightyellow;
 }
+.status {
+    height: 20px;
+    width: 80%;
+    background-color: white;
+    border-radius: 20px;
+    margin: 45px 0;
+}
+.statusBar {
+    height: 100%;
+    border-radius: 20px;
+    /* Permalink - use to edit and share this gradient: https://colorzilla.com/gradient-editor/#fefcea+0,f1da36+100;Gold+3D */
+    background: #fefcea; /* Old browsers */
+    background: -moz-linear-gradient(
+        top,
+        #fefcea 0%,
+        #f1da36 100%
+    ); /* FF3.6-15 */
+    background: -webkit-linear-gradient(
+        top,
+        #fefcea 0%,
+        #f1da36 100%
+    ); /* Chrome10-25,Safari5.1-6 */
+    background: linear-gradient(
+        to bottom,
+        #fefcea 0%,
+        #f1da36 100%
+    ); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#fefcea', endColorstr='#f1da36',GradientType=0 ); /* IE6-9 */
+}

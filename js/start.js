@@ -2,6 +2,7 @@ const main = document.querySelector("#main");
 const qna = document.querySelector("#qna");
 let q = document.querySelector(".qBox");
 let a = document.querySelector(".answerBox");
+const endPoint = 12;
 
 function addAnswer(answerText, qIdx) {
     let answer = document.createElement("button");
@@ -31,6 +32,9 @@ function goNext(qIdx) {
     for (let i in qnaList[qIdx].a) {
         addAnswer(qnaList[qIdx].a[i].answer, qIdx);
     }
+    // 진행상태바 구현하기
+    let status = document.querySelector(".statusBar");
+    status.style.width = (100 / endPoint) * (qIdx + 1) + "%";
 }
 
 function begin() {
